@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-navy: #273758;
+    --brand-navy-deep: #18243E;
+    --brand-lime: #ACD638;
+    --brand-lime-bright: #B8E62E;
+    --surface-bg: #F4F6F9;
+    --surface-card: #FFFFFF;
+    --text-primary: #1E2B45;
+    --text-secondary: #5B6B84;
+  }
+
+  html,
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    overscroll-behavior-y: contain;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Corporate tennis court backdrop pattern for desktop lateral space */
+.desktop-court-backdrop {
+  background-color: #16223B;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(172, 214, 56, 0.14) 0%, transparent 55%),
+    radial-gradient(circle at 12% 82%, rgba(39, 55, 88, 0.9) 0%, transparent 45%),
+    linear-gradient(135deg, #131E35 0%, #273758 50%, #17233E 100%);
+}
+
+/* Safe area utilities */
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}

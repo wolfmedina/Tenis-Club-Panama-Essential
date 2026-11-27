@@ -1,0 +1,230 @@
+PROMPT MAESTRO — GOOGLE AI STUDIO BUILD
+
+Construye ahora una aplicación web funcional responsive a partir de toda la especificación siguiente. No respondas solo con una explicación: genera la app y su vista previa. Usa datos ficticios compartidos entre roles, persistencia, pagos simulados y todas las pruebas de aceptación. Prioriza una administración móvil realmente operativa. Si necesitas dividir el trabajo, implementa por etapas sin eliminar las funcionalidades existentes.
+
+Nombre provisional  •  Versión 1.0  •  Noviembre 2026
+Plataforma de reservas, gestión de instalaciones públicas y privadas, comunidad, clases y clasificación deportiva. Documento preparado para generar un prototipo navegable y funcional en Google AI Studio.
+
+Objetivo del prototipo
+Demostrar una experiencia completa y coherente para jugadores, administradores, instructores y operador nacional. No es una maqueta de pantallas aisladas: las acciones deben modificar un estado compartido y reflejarse en los distintos perfiles.
+
+Principios no negociables
+- Administración completa de instalaciones tanto desde PC como desde móvil, con permisos y datos sincronizados.
+- Reservas de canchas públicas y privadas con tarifas configurables, incluso gratuitas cuando corresponda.
+- Dos modalidades de comunidad independientes: convocatoria con reserva confirmada y planificación sin reserva ni cobro previo.
+- Clases con disponibilidad cruzada de instructor y cancha; resultados y ranking Junior, Amateur y Profesional.
+- Prototipo sin pagos reales, sin datos personales reales y sin depender de integraciones externas.
+
+Alcance de la entrega
+01 Visión y roles · 02 Experiencia del jugador · 03 Comunidad · 04 Clases y ranking · 05 Administración de instalaciones · 06 Instructor y superadministración · 07 Datos y reglas · 08 Diseño y pruebas · 09 Instrucciones de construcción.
+
+01  /  Visión y roles
+Producto SaaS multiempresa con operación inicial en Panamá y posibilidad de expansión futura a otras disciplinas y países.
+Perfil | Acceso y responsabilidad
+Jugador | App móvil: reservar, pagar en simulación, buscar compañeros, organizar partidas, contratar clases y consultar ranking.
+Administrador de instalación | Portal web de escritorio y versión móvil plenamente administrable. Gestiona una o varias sedes autorizadas.
+Instructor | Portal web y versión móvil: clases, alumnos, disponibilidad, asistencia y cobros.
+Superadministrador | Portal web adaptable a móvil: operación nacional, organizaciones, comisiones, reclamos, auditoría y estadísticas.
+
+Estructura territorial y operativa
+País → provincia → distrito / ciudad → organización → instalación o sede → cancha. La organización puede operar sedes públicas o privadas; las reglas y tarifas se configuran por sede y cancha. Permitir búsqueda por ubicación, nombre y favoritos.
+
+Control de acceso
+En la demostración incluir selector visible de perfiles y sedes. En un producto real, el rol se asigna mediante autenticación y autorización del servidor, nunca por un selector libre. Roles secundarios: propietario, recepción, finanzas, mantenimiento e instructor, con permisos diferenciados.
+
+Navegación principal
+- Jugador: Inicio, Reservas, Comunidad, Ranking y Perfil. Clases y notificaciones accesibles desde Inicio y Reservas.
+- Administrador móvil: Inicio, Agenda, Operación, Finanzas y Más. En PC: barra lateral con todos los módulos.
+- Instructor: Inicio, Agenda, Alumnos, Ingresos y Perfil. Superadministrador: Dashboard, Organizaciones, Usuarios, Operaciones, Finanzas, Ranking, Configuración y Auditoría.
+
+02  /  Experiencia del jugador
+Diseñar una interfaz mobile-first, con navegación inferior fija y acciones principales fácilmente accesibles.
+
+Pantallas obligatorias
+- Bienvenida, registro / acceso simulado, selección de ubicación, perfil deportivo, preferencias, categoría y nivel, favoritos, historial y centro de notificaciones.
+- Inicio: próxima reserva, accesos a reservar cancha, buscar partido, planificar juego, clases y ranking; sugerencias de actividad.
+- Explorar: filtros de provincia, distrito / ciudad, fecha, tipo público / privado, precio, superficie, iluminación y disponibilidad. Vista lista y mapa ilustrativo opcional.
+- Ficha de sede: fotos ilustrativas, dirección, servicios, reglamento, tarifas, horarios, canchas y valoraciones ficticias.
+- Agenda de cancha: fecha, duración y horarios disponibles, ocupados, bloqueados y seleccionados. Mostrar desglose de importe y política de cancelación.
+- Checkout: seleccionar Yappy, tarjeta o reserva gratuita; simular éxito y fallo; mostrar comprobante, código de reserva y QR demostrativo.
+- Mis reservas: próximas, anteriores y canceladas; detalle, invitar jugadores, reprogramar o cancelar según política, ver comprobante y check-in.
+
+Flujo de reserva
+Ubicación → sede → cancha → fecha y horario → revisión → bloqueo temporal → pago simulado / confirmación gratuita → reserva confirmada → agenda administrativa actualizada. El usuario puede escoger individual o dobles y registrar los participantes conocidos.
+
+Notificaciones y asistencia
+Enviar al centro de notificaciones simulado: confirmación, 24 horas antes, 30 minutos antes, inicio, 10 minutos antes de terminar y finalización. Añadir avisos de cancelación, lluvia, lista de espera, clases y comunidad. Recordatorios de actividad deportiva voluntarios con frecuencia configurable. El personal puede validar un código o QR de demostración y registrar asistencia o inasistencia.
+
+03  /  Comunidad y planificación
+Crear dos acciones principales inequívocas: “Tengo cancha reservada” y “Planificar un partido”.
+
+A. Convocatoria con reserva confirmada
+- Seleccionar una reserva vigente del organizador. Indicar participantes ya confirmados, cupo total, nivel, modalidad individual o dobles, descripción y visibilidad pública o privada.
+- Ejemplo: dobles, 2 de 4 jugadores confirmados, dos plazas libres. Mostrar costo por jugador si aplica, ubicación, fecha y hora.
+- Permitir solicitar ingreso, aceptar automáticamente o aprobar manualmente, abandonar según reglas, invitar por enlace simulado y conversar en chat.
+- Al completar el cupo, cerrar convocatoria y habilitar lista de espera. Si existe aporte compartido, simular el pago y evitar cobrar dos veces la cancha; mostrar saldo y responsable.
+- Si se cancela la convocatoria, la reserva mantiene su propia política de cancelación; no se cancela silenciosamente.
+
+B. Planificación sin reserva previa
+- Crear grupo y proponer fechas, horas y sedes. Mostrar estado “En planificación · sin reserva” y plazo límite de quórum.
+- Invitar jugadores, votar opciones, confirmar asistencia y conversar. Mostrar cupo, votos y participantes. El quórum es configurable (2 para individual, 4 para dobles como ejemplo).
+- Al alcanzar el quórum, el organizador selecciona la opción ganadora y consulta disponibilidad real del estado demo antes de reservar. No se bloquea ninguna cancha mientras solo se planifica.
+- Completar reserva y pago simulado; vincular el partido a la reserva. Si el horario ya no está disponible, sugerir otro. Si vence el plazo sin quórum, cerrar sin cobro.
+
+Funciones transversales
+Buscar partidos por ubicación, fecha, nivel y cupo; grupos privados y regionales; amigos, invitaciones, chat por grupo, reporte y bloqueo de usuarios, reputación de asistencia separada del ranking. Para menores, no habilitar chat abierto con adultos ni publicar datos sensibles.
+
+04  /  Clases, resultados y ranking
+El entrenamiento y la competencia son módulos integrados en la misma agenda de canchas.
+
+Reserva de clases
+Provincia → distrito / ciudad → instalación → instructor → cancha compatible → tipo de clase → horario → pago simulado → confirmación. Mostrar simultáneamente la disponibilidad de instructor y cancha, y bloquear ambos recursos al confirmar.
+- Ficha de instructor: nombre ficticio, foto ilustrativa, especialidades, nivel de experiencia, certificaciones de ejemplo, tarifas, disponibilidad y valoraciones.
+- Clases individuales, en pareja, grupales y junior; mostrar duración, cupos, precio y participantes. Paquetes o cursos recurrentes: representación opcional, sin cobro real.
+- Mis clases: próximas e historial, cancelación, asistencia y evaluación del instructor. Para clases grupales, una sola cancha se bloquea y las plazas se venden hasta el límite.
+
+Partidos y resultados
+Al finalizar un partido, registrar marcador por sets, modalidad individual o dobles y tipo amistoso o competitivo. Una contraparte confirma o disputa el resultado; los resultados en disputa no modifican clasificación hasta resolverse. Cada resultado competitivo confirmado solo se procesa una vez.
+
+Ranking y perfil deportivo
+Categoría | Regla de demostración
+Junior | Clasificación juvenil independiente, con perfiles limitados y gestión de tutor.
+Amateur | Clasificación de aficionados; filtro por nivel de habilidad.
+Profesional | Clasificación competitiva independiente; acceso sujeto a verificación administrativa simulada.
+Mostrar ranking general de la plataforma y clasificaciones por categoría, provincia, club, período e individual / dobles. El ranking general puede listar actividad global, pero no mezclar puntuaciones incompatibles entre categorías. Proponer Elo simplificado y visible (puntuación inicial 1500; K=32 para individual; dobles con promedio por equipo). Ajustar una sola vez al confirmar un competitivo; amistosos no suman. Mostrar ganados, perdidos, historial y evolución. No incluir premios ni dinero por clasificación. No presentar como ranking federativo oficial.
+
+05  /  Administración de instalaciones
+Requisito obligatorio: la versión móvil debe permitir administrar, no solo consultar. Ambas vistas utilizan el mismo estado y permisos.
+
+Dashboard y navegación
+PC: barra lateral, indicadores, agenda semanal por cancha, gráficos de ocupación e ingresos. Móvil: indicadores compactos, agenda diaria por cancha, filtros por sede, botones de acción y formularios adaptados al tacto; no reducir el portal de escritorio a una pantalla comprimida.
+Módulo | Acciones disponibles en PC y móvil
+Agenda y reservas | Ver agenda, crear reserva manual, editar, reprogramar, cancelar, validar QR/código, marcar asistencia.
+Canchas y sedes | Crear y editar, horarios, superficie, fotos, capacidad, estado; bloquear y desbloquear por mantenimiento.
+Tarifas y políticas | Precio por horario, día, socios, residentes; gratuidad, duración, límites, anticipación, cancelación.
+Operación y clima | Suspender por lluvia, seleccionar reservas afectadas, reprogramar o iniciar devolución simulada; avisar a usuarios.
+Finanzas | Pagos, cobros presenciales, devoluciones simuladas, comprobantes, comisiones, conciliación y exportación CSV.
+Usuarios y personal | Clientes, socios, instructores, personal, roles y permisos; historial e incidencias.
+Clases y comunidad | Asignar instructor y cancha, gestionar alumnos, cupos, partidos, resultados disputados y avisos.
+Reportes | Ocupación, ingresos, reservas, cancelaciones, inasistencias, horarios de demanda y actividad por sede.
+
+Canchas públicas y privadas
+Públicas: permitir gratuidad o tarifa autorizada, límites por usuario, tarifas para residentes y bloqueos institucionales. Privadas: tarifas comerciales, socios, promociones, horarios pico y reservas recurrentes. No asumir que una cancha pública siempre es gratuita. Los administradores solo ven su organización y sedes autorizadas.
+
+06  /  Instructor y operador nacional
+Todos los perfiles deben ser navegables y demostrar acciones reales sobre datos ficticios compartidos.
+
+Portal del instructor
+- Dashboard con próximas clases, alumnos, ingresos simulados y agenda por día o semana.
+- Editar disponibilidad, perfil, tarifas y especialidades; solicitar o asociar canchas autorizadas.
+- Crear clase individual o grupal, definir cupos, confirmar asistencia, consultar alumno y registrar evaluación.
+- Consultar historial de pagos, cancelaciones y notificaciones; gestionar conflictos de agenda.
+
+Superadministración
+- Dashboard nacional: instalaciones afiliadas, canchas públicas y privadas, jugadores activos, reservas, ingresos brutos y comisiones de plataforma, clases y ocupación.
+- Organizaciones: alta, edición, activación, suspensión, asignación de administrador y sedes; filtros por provincia.
+- Usuarios: roles, moderación, reportes, verificación simulada de instructores y profesionales, auditoría de accesos y cambios.
+- Operaciones: reservas y pagos de todas las sedes, devoluciones, reclamos, disputas de resultados, reglas de ranking y categorías.
+- Configuración: tarifas de servicio, planes comerciales, políticas globales, plantillas de notificaciones, categorías, ubicaciones y exportación CSV.
+- Patrocinios: mostrar configuración básica de espacios promocionales como módulo futuro, no introducir premios ni publicidad intrusiva en el prototipo.
+
+Modelo comercial
+Configuración de comisión por reserva y clase, suscripción mensual de clubes, licenciamiento institucional y futuros patrocinios. Diferenciar importe cobrado al jugador, ingreso de la instalación, comisión y devolución. Usar USD, fechas en español y zona horaria America/Panama. Las cifras son exclusivamente de demostración; no establecer tarifas comerciales definitivas.
+
+07  /  Datos y reglas de negocio
+Implementar un modelo consistente y relaciones explícitas. Preferir estado central con persistencia local para la demo; no conectar cuentas reales.
+
+Entidades mínimas
+Usuario, PerfilDeportivo, Tutor, Organización, Sede, Cancha, Horario, Bloqueo, Reserva, Participante, Pago, Devolución, Convocatoria, Grupo, Votación, Mensaje, Instructor, Disponibilidad, Clase, Inscripción, Partido, Resultado, Ranking, Notificación, Incidencia y Auditoría. Cada registro incluye ID, relaciones, fechas y estado.
+
+Estados y validaciones esenciales
+Entidad | Estados / comportamiento
+Reserva | Temporal, confirmada, en curso, finalizada, cancelada, vencida, no asistió. Bloqueo temporal demo de 5 minutos.
+Pago | Pendiente, aprobado, rechazado, devolución pendiente, devuelto. Confirmar una vez; un fallo libera el bloqueo.
+Cancha | Disponible, reservada, en uso, bloqueada, mantenimiento. La disponibilidad se calcula por intervalos.
+Convocatoria | Abierta, completa, cerrada, cancelada. Cupo máximo y lista de espera.
+Planificación | Abierta, quórum alcanzado, reservada, vencida, cancelada. No genera pago ni bloqueo hasta reservar.
+Clase / resultado | Clase abierta, completa, cancelada o finalizada. Resultado pendiente, confirmado o disputado.
+No permitir intervalos solapados entre reservas, clases y bloqueos de cancha; tampoco solapamiento de instructor. Validar duración, capacidad y anticipación. Reprogramación verifica nuevo turno antes de liberar el anterior. Cancelar, liberar o devolver según políticas; registrar auditoría. Las acciones deben actualizar calendario, indicadores y notificaciones de los perfiles afectados.
+
+Datos iniciales sugeridos
+Sedes ficticias: Centro Público Demo (Panamá), Club Demo Costa Verde (Panamá Oeste), Club Demo David (Chiriquí), Centro Demo Colón (Colón). Crear 2–4 canchas por sede, usuarios adultos y junior ficticios, 4 instructores, horarios, tarifas $0/$12/$20, reservas, clases y partidos. Incluir ejemplos de disponibilidad, lluvia, pago rechazado y ranking. Permitir reiniciar datos demo.
+
+08  /  Diseño y criterios de aceptación
+El resultado debe ser un prototipo de producto, no una landing page ni una presentación estática.
+
+Dirección visual propuesta
+Marca provisional Tennis Hub Panamá; diseño deportivo premium y limpio. Paleta verde profundo #153D34, verde activo #176E57, lima #C5E85C como acento, fondos #F5F7F6 y texto #263746. Tipografía Inter o similar; tarjetas sobrias, iconografía consistente, fotografías de tenis genéricas o ilustraciones sin marcas de terceros. Inspiración de experiencia Playtomic, sin copiar su identidad visual.
+- Responsive: móvil desde 360 px, tablet y escritorio desde 1280 px. Formularios con etiquetas, estados de carga, error, vacío y éxito; contraste legible y navegación por teclado.
+- Admin móvil con menú inferior, agenda en formato lista y detalle por cancha, búsqueda y filtros; todas las operaciones administrativas accesibles. PC con calendario y tablas sin ocultar funciones.
+- Mostrar selector de perfil demo y sede, indicador “Modo demostración”, confirmaciones antes de acciones sensibles y mensajes claros. No depender de claves de API, mapas reales ni generación de imágenes.
+
+Pruebas de aceptación
+- P1: reservar cancha gratuita y de pago simulado; administrador ve ambas y no puede duplicar el horario.
+- P2: desde móvil administrativo bloquear cancha y comprobar que desaparece del catálogo disponible; reprogramar y cancelar correctamente.
+- P3: publicar convocatoria 2/4, incorporar dos jugadores y cerrar cupo; planificar otro partido por votación sin pagar antes del quórum.
+- P4: reservar clase; verificar bloqueo de instructor y cancha y reflejo en ambos portales.
+- P5: registrar resultado, disputar, resolver y confirmar; ranking solo cambia una vez.
+- P6: suspender por lluvia, emitir avisos, simular devolución y actualizar indicadores. Cambiar sede y verificar aislamiento.
+- P7: recargar y conservar datos demo; reiniciar cuando se solicite. Verificar móvil y PC, enlaces, botones, filtros y formularios.
+
+09  /  Guía para Google AI Studio
+Instrucciones de construcción que acompañan al archivo de prompt maestro en texto plano.
+
+Prompt de arranque
+Actúa como arquitecto de producto, diseñador UX/UI y desarrollador full-stack. Construye una aplicación web interactiva responsive denominada Tennis Hub Panamá, usando esta especificación como contrato funcional. Genera una experiencia mobile-first para jugadores, una administración web y móvil completa para instalaciones, un portal de instructores y superadministración. No construyas una landing page. Usa React y TypeScript si el entorno lo permite, componentes reutilizables, rutas por rol y estado compartido con persistencia local o backend demo. Todas las pantallas y acciones deben funcionar con datos ficticios. Mantén separados los módulos y evita dependencias innecesarias. No solicites credenciales, no realices pagos ni llamadas reales. Entrega una vista previa navegable, con selector de roles, datos iniciales y botón de reinicio. Ejecuta y corrige las pruebas de aceptación de la especificación.
+
+Secuencia recomendada de iteración
+Etapa | Instrucción de seguimiento
+1. Base | Construye navegación, diseño responsive, perfiles, datos ficticios y persistencia compartida.
+2. Reservas | Implementa agenda, bloqueos, checkout simulado y administración PC/móvil. Prueba conflictos.
+3. Comunidad | Implementa convocatorias y planificación con votaciones, cupos y quórum.
+4. Academia y ranking | Integra clases, resultados confirmados, puntos y estadísticas.
+5. Operación | Completa finanzas, clima, QR demo, reportes y notificaciones; revisa permisos.
+6. Validación | Ejecuta P1–P7, corrige botones y estados, conserva diseño y funciones ya implementadas.
+
+Fuera de alcance y decisiones pendientes
+El prototipo no certifica seguridad, concurrencia real, pagos, push, publicación nativa ni cumplimiento legal. Validar con el cliente nombre, tarifas, proveedor de pagos y reparto de fondos, reglas de clasificación y acceso junior, instituciones afiliadas, requisitos legales y propiedad intelectual. Las políticas y tecnologías sugeridas son propuestas de diseño, no compromisos comerciales.
+
+Referencias de producto y construcción
+Playtomic: https://playtomic.com/ — referencia funcional de reservas y clubes. Documentación oficial de Google AI Studio: https://ai.google.dev/gemini-api/docs/aistudio-build-mode — modo Build para prototipado web.
+
+Desarrolla la aplicación TENIS CLUB PANAMÁ como una Progressive Web App (PWA), utilizando una arquitectura Mobile First.
+Requerimientos obligatorios de interfaz
+•	Utilizar el logo original adjunto sin modificar su estructura.
+•	Respetar estrictamente las imágenes de referencia visual suministradas.
+•	Utilizar azul marino #273758, verde tenis #ACD638, blanco #FFFFFF y gris claro #F4F6F9.
+•	Utilizar tipografía moderna, preferiblemente Inter.
+•	Mantener una interfaz deportiva, moderna, premium, limpia y funcional.
+Comportamiento en diferentes dispositivos
+•	La aplicación debe conservar siempre su orientación visual vertical.
+•	En dispositivos móviles debe ocupar el 100% del ancho disponible.
+•	En computadoras y tablets debe mantenerse centrada, con un ancho máximo de 480 píxeles.
+•	No transformar la interfaz móvil en una página web horizontal al abrirla desde una computadora.
+•	Los espacios laterales en computadoras deberán utilizar un fondo azul corporativo con elementos deportivos sutiles.
+•	No agregar marcos decorativos que simulen físicamente un teléfono.
+•	Mantener la navegación inferior fija dentro del contenedor de la aplicación.
+•	Permitir desplazamiento vertical independiente.
+•	Adaptar la interfaz a las áreas seguras de iOS y Android.
+•	Evitar completamente el desplazamiento horizontal de la página.
+Configuración PWA
+•	Nombre: Tenis Club Panamá.
+•	Nombre corto: Tenis Club.
+•	Crear el archivo manifest.webmanifest.
+•	Configurar un Service Worker.
+•	Utilizar el logo corporativo como icono de instalación.
+•	Configurar iconos de 192 × 192 y 512 × 512 píxeles.
+•	Configurar display: standalone.
+•	Configurar orientación portrait donde el dispositivo lo permita.
+•	Incorporar pantalla de lanzamiento corporativa.
+•	Preparar la aplicación para notificaciones push.
+•	Incorporar la opción de instalar la aplicación cuando el navegador lo permita.
+•	Preparar el proyecto para su publicación bajo un dominio personalizado mediante HTTPS.
+Alcance de esta primera etapa
+Desarrollar prioritariamente la experiencia móvil del jugador y del administrador de instalaciones.
+Todas las pantallas deben ser navegables e interactivas. Utilizar datos de demostración coherentes y compartidos entre módulos.
+No crear únicamente una maqueta visual. Construir un prototipo funcional que permita realizar reservas, seleccionar horarios, simular pagos, organizar partidos, reservar clases, consultar rankings y administrar canchas.
+Mantener separadas las interfaces del jugador y del administrador mediante perfiles y permisos.
+Los pagos reales, las notificaciones externas y la autenticación de producción deberán identificarse como integraciones pendientes.
+
+
